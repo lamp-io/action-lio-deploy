@@ -14,7 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Lio deploy
-    #   TODO change repo/action names
         uses: lamp-io/action-lio-deploy@master
         with:
           auth_token: ${{ secrets.lamp_io_token }}
