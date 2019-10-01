@@ -1,0 +1,22 @@
+name: "Lio deploy action"
+description: "Deploy your app to lamp.io platform"
+author: https://www.lamp.io/
+inputs:
+  auth_token:
+    required: true
+    description: "Set your auth token for lamp.io"
+  app_type:
+    required: true
+    description: "Set your app type"
+    default: "laravel"
+  sqlite:
+    required: false
+    description: "Use sqlite as a persistent storage for your app"
+runs:
+  using: "docker"
+  entrypoint: entrypoint.sh
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.auth_token }}
+    - ${{ inputs.app_type }}
+    - ${{ inputs.sqlite }}
