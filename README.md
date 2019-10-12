@@ -23,12 +23,11 @@ jobs:
 ### Secrets
 
 - `lamp_io_token` – **required** The [lamp.io](https://www.lamp.io) access token, should be used as `auth_token` argument
-- `lamp_io_app_id` - **required** ***string*** The [lamp.io](https://www.lamp.io) App Id, should be used as `app_id` argument
 
 ### Arguments
 
-- `auth_token` - **required** ***string*** The [lamp.io](https://www.lamp.io) access token
-- `app_id` - **required** ***string*** Your [lamp.io](https://www.lamp.io) App Id
+- `auth_token` - **required**  The [lamp.io](https://www.lamp.io) access token
+- `app_id` - **required**  Your [lamp.io](https://www.lamp.io) App Id
 
 ## License
 

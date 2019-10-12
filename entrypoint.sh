@@ -1,9 +1,9 @@
 #!/bin/sh -l
+set -e
 
-#set auth token
 composer install --optimize-autoloader
 composer global require lamp-io/lio dev-master --update-with-dependencies
-lio=$HOME/.composer/vendor/bin/lio
+alias lio=$HOME/.composer/vendor/bin/lio
 
 cp .env .env.live
 export LAMP_IO_TOKEN=$1
@@ -64,6 +64,3 @@ elif [ "$(echo $public | jq -r '.data.attributes.is_symlink')" = 'true' ]; then
   # update it to point to this new release
   lio files:update:symlink $app public releases/$release/public
 fi
-
-# cleanup the zip
-rm -f /tmp/artifact.zip

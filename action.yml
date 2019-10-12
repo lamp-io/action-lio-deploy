@@ -10,7 +10,6 @@ inputs:
     description: "Your lamp.io App Id"
 runs:
   using: "docker"
-  entrypoint: entrypoint.sh
   image: 'Dockerfile'
   args:
     - ${{ inputs.auth_token }}
