@@ -1,6 +1,6 @@
 # [lamp.io](https://www.lamp.io) deploy
 
-This action will deploy your app to [lamp.io](https://www.lamp.io) platform
+This action will deploy your laravel app to [lamp.io](https://www.lamp.io) platform
 
 ## Usage
 
@@ -17,19 +17,18 @@ jobs:
         uses: lamp-io/action-lio-deploy@master
         with:
           auth_token: ${{ secrets.lamp_io_token }}
-# Uncomment this line if want to use sqlite as persistent storage      
-#          sqlite: true
+          app_id: $({secrets.lamp_io_app_id})
 ```
 
 ### Secrets
 
 - `lamp_io_token` – **required** The [lamp.io](https://www.lamp.io) access token, should be used as `auth_token` argument
+- `lamp_io_app_id` - **required** ***string*** The [lamp.io](https://www.lamp.io) App Id, should be used as `app_id` argument
 
 ### Arguments
 
 - `auth_token` - **required** ***string*** The [lamp.io](https://www.lamp.io) access token
-- `app_type` - **optional** ***string*** Set your application engine. Default value is `laravel`
-- `sqlite` - **optional** ***bool*** Set sqlite as persistent storage fro your app
+- `app_id` - **required** ***string*** Your [lamp.io](https://www.lamp.io) App Id
 
 ## License
 

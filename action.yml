@@ -5,18 +5,13 @@ inputs:
   auth_token:
     required: true
     description: "Set your auth token for lamp.io"
-  app_type:
+  app_id:
     required: true
-    description: "Set your app type"
-    default: "laravel"
-  sqlite:
-    required: false
-    description: "Use sqlite as a persistent storage for your app"
+    description: "Your lamp.io App Id"
 runs:
   using: "docker"
   entrypoint: entrypoint.sh
   image: 'Dockerfile'
   args:
     - ${{ inputs.auth_token }}
-    - ${{ inputs.app_type }}
-    - ${{ inputs.sqlite }}
+    - ${{ inputs.app_id }}
