@@ -1,7 +1,7 @@
 #!/bin/sh -l
 
 #set auth token
-composer install
+composer install --optimize-autoloader
 composer global require lamp-io/lio dev-master --update-with-dependencies
 lio=$HOME/.composer/vendor/bin/lio
 
@@ -9,9 +9,6 @@ cp .env .env.live
 export LAMP_IO_TOKEN=$1
 app=$2
 release="$(date +%Y%m%d%H%m%s)";
-
-# run composer with prod flags
-composer install --optimize-autoloader
 
 # zip up the app for uploading
 zip -r /tmp/artifact.zip . \
