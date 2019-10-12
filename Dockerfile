@@ -1,5 +1,9 @@
 FROM php:7.3-cli
 COPY entrypoint.sh /entrypoint.sh
+
+RUN chmod 777 /usr/local/bin/docker-entrypoint.sh \
+    && ln -s /usr/local/bin/docker-entrypoint.sh /
+
 RUN apt-get update && apt-get install -y \
     zlib1g-dev \
     libzip-dev \
